@@ -1,0 +1,14 @@
+SQLInjection: SELECT \* FROM
+SQLInjectionUnion: UNION SELECT
+SQLInjectionError: OR 1=1
+SQLInjectionBlindBoolean: AND 1=1
+SQLInjectionBlindTime: ; WAITFOR DELAY 0:0:5--
+SQLInjectionWithComments: /\*\*/OR/\*\*/1/\*\*/=/\*\*/1
+BadBotKnown: User-Agent: BadBot
+BadBotCrawler: User-Agent: .*crawler.*
+BadBotSQLMap: User-Agent: sqlmap
+BadBotAutomatedTool: User-Agent: (python-requests|curl|wget)
+TraversalBasic: GET /\.\./
+TraversalEncoded: GET /%2e%2e/
+TraversalDoubleEncoded: GET /%252e%252e/
+TraversalUnicode: GET /..%c0%af/
